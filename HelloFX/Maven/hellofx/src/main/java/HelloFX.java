@@ -1,3 +1,4 @@
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -6,11 +7,8 @@ import javafx.stage.Stage;
 
 public class HelloFX extends Application {
 
-    @Override
     public void start(Stage stage) {
-        Body b=new Body();
-        b.test=3;
-        Label l = new Label("test: "+b.test);
+        Label l = new Label("this is a label");
         Scene scene = new Scene(new StackPane(l), 640, 480);
         stage.setScene(scene);
         stage.show();
