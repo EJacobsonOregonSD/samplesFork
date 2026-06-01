@@ -12,4 +12,7 @@ public abstract class Body{
     //double orbitEccentricity
     //double orbitAnomaly
 
+    public Body(String name,double x,double y,double xv,double yv,double mass,double radius){
+        xPos=x; yPos=y; xVel=xv; yVel=yv; this.mass=mass; this.radius=radius; this.name=name;
+    }
 }
