@@ -9,7 +9,18 @@ public class Simulation{
     }
 
     public void simulateStep(){
+        for (int i = 0; i < bodies.length-1; i++) {
+            for (int j = i+1; j < bodies.length; j++) {
+                System.out.println(i+","+j);
+                applyGravity(bodies[i],bodies[j]);
+            }
+        }
+    }
+    public void applyGravity(Body b1,Body b2){
         //TODO
+        double xDist=b1.x-b2.x;
+        double yDist=b1.y-b2.y;
+        double distance=Math.sqrt(xDist*xDist+yDist*yDist);
     }
 
 }

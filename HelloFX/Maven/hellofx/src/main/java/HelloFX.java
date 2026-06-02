@@ -15,6 +15,8 @@ public class HelloFX extends Application {
     }
 
     public static void main(String[] args) {
+        Simulation sim=new Simulation(new Body[]{null,null,null},1);
+        sim.simulateStep();
         launch();
     }
 
