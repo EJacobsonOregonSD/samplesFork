@@ -8,6 +8,18 @@ public class Simulation{
         this.timeStep=timeStep;
     }
 
+    public Body[][] recordSteps(int steps){
+        Body[][] record=new Body[steps][];
+        for(int i=0;i<steps;i++){
+            record[i]=new Body[bodies.length];
+            for(int idx=0;idx<record[i].length;idx++){
+                record[i][idx]=bodies[idx].clone();
+            }
+            simulateStep();
+        }
+        return record;
+    }
+
     public void simulateStep(){
         for (int i = 0; i < bodies.length-1; i++) {
             for (int j = i+1; j < bodies.length; j++) {
@@ -18,8 +30,8 @@ public class Simulation{
     }
     public void applyGravity(Body b1,Body b2){
         //TODO
-        double xDist=b1.x-b2.x;
-        double yDist=b1.y-b2.y;
+        double xDist=b1.xPos-b2.xPos;
+        double yDist=b1.yPos-b2.yPos;
         double distance=Math.sqrt(xDist*xDist+yDist*yDist);
     }
 

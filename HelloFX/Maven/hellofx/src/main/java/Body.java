@@ -1,4 +1,4 @@
-public abstract class Body{
+public class Body{
     public String name;
     public double xPos,yPos;
     public double xVel,yVel;
@@ -9,5 +9,8 @@ public abstract class Body{
 
     public Body(String name,double x,double y,double xv,double yv,double mass,double radius){
         xPos=x; yPos=y; xVel=xv; yVel=yv; this.mass=mass; this.radius=radius; this.name=name;
+    }
+    public Body clone(){
+        return new Body(name,xPos,yPos,xVel,yVel,mass,radius);
     }
 }
