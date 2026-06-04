@@ -8,6 +8,13 @@ public class Simulation{
         this.timeStep=timeStep;
     }
 
+    public Simulation(double timeStep){
+        bodies=new Body[]{
+            new Body("Sun",0,0,0,0,1.988475e30,675700000)
+        };
+        this.timeStep=timeStep;
+    }
+
     public Body[][] recordSteps(int steps){
         Body[][] record=new Body[steps][];
         for(int i=0;i<steps;i++){
@@ -29,10 +36,16 @@ public class Simulation{
         }
     }
     public void applyGravity(Body b1,Body b2){
-        //TODO
+        //TODO is this even remotely correct?
         double xDist=b1.xPos-b2.xPos;
         double yDist=b1.yPos-b2.yPos;
-        double distance=Math.sqrt(xDist*xDist+yDist*yDist);
+        double distanceSquared=xDist*xDist+yDist*yDist;
+        double distance=Math.sqrt(distanceSquared);
+        double acceleration=timeStep*g*b1.mass*b2.mass/distanceSquared;
+        b1.xVel+=acceleration*xDist/distance;
+        b1.yVel+=acceleration*yDist/distance;
+        b2.xVel-=acceleration*xDist/distance;
+        b2.yVel-=acceleration*yDist/distance;
     }
 
 }
