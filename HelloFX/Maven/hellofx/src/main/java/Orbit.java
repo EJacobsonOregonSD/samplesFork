@@ -1,7 +1,7 @@
 public class Orbit{
     double eccentricity;
     double semiMajorAxis;
-    //Body orbiting
+    Body orbiting;
     //double orbitDistance
     //double orbitSemiMajorAxis 
     //double orbitEccentricity
