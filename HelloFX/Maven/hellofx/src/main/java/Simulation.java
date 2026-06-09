@@ -33,7 +33,7 @@ public class Simulation{
         for (int i = 0; i < bodies.length-1; i++) {
             for (int j = i+1; j < bodies.length; j++) {
                 System.out.println(i+","+j);
-                applyGravity(bodies[i],bodies[j]);
+                //applyGravity(bodies[i],bodies[j]);
             }
         }
         for(Body body:bodies){

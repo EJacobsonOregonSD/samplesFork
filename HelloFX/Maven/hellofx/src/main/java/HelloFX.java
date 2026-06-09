@@ -100,7 +100,7 @@ public class HelloFX extends Application {
         }
         
         
-        gc.fillText("Width:"+screenWidth,10,10);
+        gc.fillText("Screen width:"+screenWidth,10,10);
     }
 
     public static void main(String[] args) {
